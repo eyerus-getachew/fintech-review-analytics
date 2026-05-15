@@ -12,14 +12,39 @@ This project analyzes Google Play Store reviews from Ethiopian banking applicati
 - Bank of Abyssinia (BOA)
 - Dashen Bank
 
-## Technologies
+## Technologies Used
 
 - Python
 - pandas
 - google-play-scraper
 - GitHub Actions
-- PostgreSQL
-- NLP
+- pytest
+
+## Data Collection
+
+Reviews were scraped from the Google Play Store using the `google-play-scraper` Python package.
+
+### Data Fields Collected
+
+- Review text
+- Rating
+- Review date
+- Bank name
+- Source
+
+### Collection Summary
+
+- Total reviews collected: 11,495
+- Final cleaned reviews: 8,328
+
+## Preprocessing Steps
+
+The following preprocessing steps were applied:
+
+- Removed duplicate reviews
+- Removed rows with missing review text or ratings
+- Normalized dates to YYYY-MM-DD format
+- Exported cleaned dataset as CSV
 
 ## Project Structure
 
@@ -28,8 +53,8 @@ This project analyzes Google Play Store reviews from Ethiopian banking applicati
 - `notebooks/` → analysis notebooks
 - `tests/` → unit tests
 
-## Task 1
+## Limitations
 
-- Scrape reviews from Google Play Store
-- Clean and preprocess reviews
-- Export analysis-ready dataset
+- Some reviews contain emojis or mixed languages
+- Google Play review availability may change over time
+- Duplicate reviews were common across apps
